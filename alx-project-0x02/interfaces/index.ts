@@ -17,3 +17,11 @@ export interface ApiResponse<T> {
   message: string;
   success: boolean;
 }
+
+// Card component interface
+export interface CardProps {
+  title: string;
+  content: string;
+  variant?: 'default' | 'primary' | 'secondary';
+  className?: string;
+}
