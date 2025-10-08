@@ -37,3 +37,15 @@ export interface PostModalProps {
   onClose: () => void;
   onSubmit: (data: PostData) => void;
 }
+
+// Button component interface
+export interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  size?: 'small' | 'medium' | 'large';
+  shape?: 'rounded-sm' | 'rounded-md' | 'rounded-full';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  className?: string;
+}
