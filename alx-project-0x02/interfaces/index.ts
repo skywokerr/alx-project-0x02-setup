@@ -25,3 +25,15 @@ export interface CardProps {
   variant?: 'default' | 'primary' | 'secondary';
   className?: string;
 }
+
+// Post Modal interfaces
+export interface PostData {
+  title: string;
+  content: string;
+}
+
+export interface PostModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (data: PostData) => void;
+}
