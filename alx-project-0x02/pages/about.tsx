@@ -1,13 +1,10 @@
 import Header from '../components/layout/Header';
 import Button from '../components/common/Button';
-import { useState } from 'react';
 
 export default function AboutPage() {
-  const [clickCount, setClickCount] = useState(0);
-
   const handleButtonClick = (buttonName: string) => {
-    setClickCount(prev => prev + 1);
-    console.log(`${buttonName} clicked! Total clicks: ${clickCount + 1}`);
+    alert(`${buttonName} clicked!`);
+    console.log(`${buttonName} was clicked`);
   };
 
   return (
@@ -19,187 +16,153 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             About Page
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
             Learn more about our ALX Project 2 application and explore our reusable Button component.
           </p>
           
           {/* Button Component Demonstration */}
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Button Component Demo</h2>
-            <p className="text-gray-600 mb-6">Total clicks: {clickCount}</p>
             
-            {/* Size Variations */}
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Size Variations</h3>
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <Button 
-                  size="small" 
-                  onClick={() => handleButtonClick('Small Button')}
-                >
-                  Small Button
-                </Button>
-                <Button 
-                  size="medium" 
-                  onClick={() => handleButtonClick('Medium Button')}
-                >
-                  Medium Button
-                </Button>
-                <Button 
-                  size="large" 
-                  onClick={() => handleButtonClick('Large Button')}
-                >
-                  Large Button
-                </Button>
-              </div>
+            {/* Three buttons with different sizes and shapes as requested */}
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              {/* Small button with slight rounding */}
+              <Button 
+                size="small"
+                shape="rounded-sm"
+                onClick={() => handleButtonClick('Small Slightly Rounded Button')}
+              >
+                Small Button
+              </Button>
+              
+              {/* Medium button with medium rounding */}
+              <Button 
+                size="medium"
+                shape="rounded-md"
+                variant="secondary"
+                onClick={() => handleButtonClick('Medium Rounded Button')}
+              >
+                Medium Button
+              </Button>
+              
+              {/* Large button with full rounding */}
+              <Button 
+                size="large"
+                shape="rounded-full"
+                variant="outline"
+                onClick={() => handleButtonClick('Large Fully Rounded Button')}
+              >
+                Large Button
+              </Button>
             </div>
 
-            {/* Shape Variations */}
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Shape Variations</h3>
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <Button 
-                  shape="rounded-sm" 
-                  variant="primary"
-                  onClick={() => handleButtonClick('Slightly Rounded')}
-                >
-                  Slightly Rounded
-                </Button>
-                <Button 
-                  shape="rounded-md" 
-                  variant="secondary"
-                  onClick={() => handleButtonClick('Medium Rounded')}
-                >
-                  Medium Rounded
-                </Button>
-                <Button 
-                  shape="rounded-full" 
-                  variant="outline"
-                  onClick={() => handleButtonClick('Fully Rounded')}
-                >
-                  Fully Rounded
-                </Button>
+            {/* Additional examples to show all combinations */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-semibold mb-6 text-blue-600">All Size and Shape Combinations</h3>
+              
+              {/* Small buttons with different shapes */}
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-4 text-gray-700">Small Size Variations</h4>
+                <div className="flex flex-wrap justify-center gap-4 mb-6">
+                  <Button 
+                    size="small"
+                    shape="rounded-sm"
+                    onClick={() => handleButtonClick('Small Rounded-sm')}
+                  >
+                    Rounded Small
+                  </Button>
+                  <Button 
+                    size="small"
+                    shape="rounded-md"
+                    variant="secondary"
+                    onClick={() => handleButtonClick('Small Rounded-md')}
+                  >
+                    Rounded Medium
+                  </Button>
+                  <Button 
+                    size="small"
+                    shape="rounded-full"
+                    variant="outline"
+                    onClick={() => handleButtonClick('Small Rounded-full')}
+                  >
+                    Rounded Full
+                  </Button>
+                </div>
               </div>
-            </div>
 
-            {/* Variant Combinations */}
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Variant Combinations</h3>
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <Button 
-                  variant="primary"
-                  size="medium"
-                  shape="rounded-md"
-                  onClick={() => handleButtonClick('Primary Variant')}
-                >
-                  Primary
-                </Button>
-                <Button 
-                  variant="secondary"
-                  size="medium"
-                  shape="rounded-md"
-                  onClick={() => handleButtonClick('Secondary Variant')}
-                >
-                  Secondary
-                </Button>
-                <Button 
-                  variant="outline"
-                  size="medium"
-                  shape="rounded-md"
-                  onClick={() => handleButtonClick('Outline Variant')}
-                >
-                  Outline
-                </Button>
-                <Button 
-                  variant="ghost"
-                  size="medium"
-                  shape="rounded-md"
-                  onClick={() => handleButtonClick('Ghost Variant')}
-                >
-                  Ghost
-                </Button>
+              {/* Medium buttons with different shapes */}
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-4 text-gray-700">Medium Size Variations</h4>
+                <div className="flex flex-wrap justify-center gap-4 mb-6">
+                  <Button 
+                    size="medium"
+                    shape="rounded-sm"
+                    onClick={() => handleButtonClick('Medium Rounded-sm')}
+                  >
+                    Rounded Small
+                  </Button>
+                  <Button 
+                    size="medium"
+                    shape="rounded-md"
+                    variant="secondary"
+                    onClick={() => handleButtonClick('Medium Rounded-md')}
+                  >
+                    Rounded Medium
+                  </Button>
+                  <Button 
+                    size="medium"
+                    shape="rounded-full"
+                    variant="outline"
+                    onClick={() => handleButtonClick('Medium Rounded-full')}
+                  >
+                    Rounded Full
+                  </Button>
+                </div>
               </div>
-            </div>
 
-            {/* Complex Examples */}
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Complex Examples</h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  size="large"
-                  shape="rounded-full"
-                  variant="primary"
-                  onClick={() => handleButtonClick('Large Pill Button')}
-                >
-                  Large Pill Button
-                </Button>
-                <Button 
-                  size="small"
-                  shape="rounded-sm"
-                  variant="outline"
-                  onClick={() => handleButtonClick('Small Square')}
-                >
-                  Small Square
-                </Button>
-                <Button 
-                  size="medium"
-                  shape="rounded-full"
-                  variant="ghost"
-                  onClick={() => handleButtonClick('Medium Ghost Pill')}
-                >
-                  Ghost Pill
-                </Button>
-              </div>
-            </div>
-
-            {/* Disabled State */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Disabled State</h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button 
-                  size="medium"
-                  shape="rounded-md"
-                  variant="primary"
-                  disabled
-                >
-                  Disabled Primary
-                </Button>
-                <Button 
-                  size="medium"
-                  shape="rounded-md"
-                  variant="outline"
-                  disabled
-                >
-                  Disabled Outline
-                </Button>
+              {/* Large buttons with different shapes */}
+              <div className="mb-8">
+                <h4 className="text-lg font-medium mb-4 text-gray-700">Large Size Variations</h4>
+                <div className="flex flex-wrap justify-center gap-4 mb-6">
+                  <Button 
+                    size="large"
+                    shape="rounded-sm"
+                    onClick={() => handleButtonClick('Large Rounded-sm')}
+                  >
+                    Rounded Small
+                  </Button>
+                  <Button 
+                    size="large"
+                    shape="rounded-md"
+                    variant="secondary"
+                    onClick={() => handleButtonClick('Large Rounded-md')}
+                  >
+                    Rounded Medium
+                  </Button>
+                  <Button 
+                    size="large"
+                    shape="rounded-full"
+                    variant="outline"
+                    onClick={() => handleButtonClick('Large Rounded-full')}
+                  >
+                    Rounded Full
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Button Component Features */}
+          {/* Button Component Documentation */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-2xl font-semibold mb-4 text-blue-600">Button Features</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-blue-600">Button Props</h2>
               <ul className="text-left space-y-3 text-gray-700">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span>
-                  Multiple sizes: small, medium, large
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span>
-                  Various shapes: rounded-sm, rounded-md, rounded-full
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span>
-                  Multiple variants: primary, secondary, outline, ghost
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span>
-                  Disabled state support
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span>
-                  TypeScript support with full type safety
-                </li>
+                <li><strong>size:</strong> 'small' | 'medium' | 'large'</li>
+                <li><strong>shape:</strong> 'rounded-sm' | 'rounded-md' | 'rounded-full'</li>
+                <li><strong>variant:</strong> 'primary' | 'secondary' | 'outline'</li>
+                <li><strong>onClick:</strong> Click handler function</li>
+                <li><strong>disabled:</strong> boolean</li>
+                <li><strong>type:</strong> 'button' | 'submit' | 'reset'</li>
               </ul>
             </div>
             
@@ -207,13 +170,13 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold mb-4 text-blue-600">Usage Examples</h2>
               <div className="text-left space-y-4 text-gray-700">
                 <code className="block bg-gray-100 p-2 rounded text-sm">
-                  {`<Button size="large" shape="rounded-full" variant="primary">`}
+                  {`<Button size="small" shape="rounded-sm">Small</Button>`}
                 </code>
                 <code className="block bg-gray-100 p-2 rounded text-sm">
-                  {`<Button size="small" variant="outline" disabled>`}
+                  {`<Button size="large" shape="rounded-full" variant="outline">Large Pill</Button>`}
                 </code>
                 <code className="block bg-gray-100 p-2 rounded text-sm">
-                  {`<Button variant="ghost" onClick={handleClick}>`}
+                  {`<Button onClick={handleClick} disabled>Disabled</Button>`}
                 </code>
               </div>
             </div>

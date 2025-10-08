@@ -44,7 +44,7 @@ export interface ButtonProps {
   onClick?: () => void;
   size?: 'small' | 'medium' | 'large';
   shape?: 'rounded-sm' | 'rounded-md' | 'rounded-full';
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline';
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
